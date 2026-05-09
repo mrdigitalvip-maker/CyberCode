@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberCore - Futuristic Hacker AI Command Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Matrix Binary Rain Background -->
+    <canvas id="matrixCanvas" class="matrix-rain"></canvas>
+
+    <!-- Glitch Effect Layer -->
+    <div class="glitch-layer"></div>
+
+    <!-- Animated Digital Particles -->
+    <div class="particles-container" id="particlesContainer"></div>
+
+    <!-- Neon Grid Overlay -->
+    <div class="neon-grid"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Top HUD Elements -->
+        <div class="hud-top">
+            <div class="hud-element hud-left">
+                <div class="hud-text">[ SYSTEM ONLINE ]</div>
+                <div class="hud-status">
+                    <span class="status-dot"></span> Neural Network Active
+                </div>
+            </div>
+            <div class="hud-center">
+                <div class="hud-text">CYBERCORE v2.0</div>
+                <div class="hud-subtext">ADVANCED AI COMMAND CENTER</div>
+            </div>
+            <div class="hud-element hud-right">
+                <div class="hud-text">[ INITIALIZED ]</div>
+                <div class="hud-status">
+                    <span class="status-dot"></span> All Systems Go
+                </div>
+            </div>
+        </div>
+
+        <!-- Central Hacker Section -->
+        <div class="hacker-section">
+            <!-- Hacker Avatar Container -->
+            <div class="hacker-container">
+                <div class="hacker-frame">
+                    <!-- SVG Hacker Avatar with Glowing Eyes -->
+                    <svg class="hacker-avatar" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Head Shadow -->
+                        <ellipse cx="100" cy="80" rx="45" ry="50" fill="#0a0a0a" opacity="0.6"/>
+                        
+                        <!-- Head -->
+                        <circle cx="100" cy="80" r="45" fill="#1a1a2e" stroke="#00ff88" stroke-width="2"/>
+                        
+                        <!-- Hood -->
+                        <path d="M 55 75 Q 50 50 100 45 Q 150 50 145 75" fill="#0f1419" stroke="#00ff88" stroke-width="2"/>
+                        <path d="M 55 75 Q 52 80 55 120 L 65 130 Q 75 125 80 110" fill="#0f1419" stroke="#00ff88" stroke-width="1.5"/>
+                        <path d="M 145 75 Q 148 80 145 120 L 135 130 Q 125 125 120 110" fill="#0f1419" stroke="#00ff88" stroke-width="1.5"/>
+                        
+                        <!-- Face -->
+                        <ellipse cx="100" cy="90" rx="35" ry="40" fill="#1a1a2e" opacity="0.8"/>
+                        
+                        <!-- Left Eye (Glowing) -->
+                        <circle cx="80" cy="75" r="8" fill="#00ff88" class="eye-glow">
+                            <animate attributeName="r" values="8;9;10;9;8" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="80" cy="75" r="6" fill="#00ff44" class="eye-inner"/>
+                        <circle cx="82" cy="73" r="3" fill="#ffffff" opacity="0.7"/>
+                        
+                        <!-- Right Eye (Glowing) -->
+                        <circle cx="120" cy="75" r="8" fill="#00ff88" class="eye-glow">
+                            <animate attributeName="r" values="8;9;10;9;8" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="120" cy="75" r="6" fill="#00ff44" class="eye-inner"/>
+                        <circle cx="122" cy="73" r="3" fill="#ffffff" opacity="0.7"/>
+                        
+                        <!-- Eyelids Animation -->
+                        <rect class="eyelid-top left" x="72" y="68" width="16" height="4" fill="#0f1419" rx="2"/>
+                        <rect class="eyelid-bottom left" x="72" y="82" width="16" height="4" fill="#0f1419" rx="2"/>
+                        
+                        <rect class="eyelid-top right" x="112" y="68" width="16" height="4" fill="#0f1419" rx="2"/>
+                        <rect class="eyelid-bottom right" x="112" y="82" width="16" height="4" fill="#0f1419" rx="2"/>
+                        
+                        <!-- Nose -->
+                        <line x1="100" y1="85" x2="100" y2="100" stroke="#00ff88" stroke-width="1" opacity="0.5"/>
+                        
+                        <!-- Mouth -->
+                        <path d="M 90 110 Q 100 115 110 110" stroke="#00ff88" stroke-width="2" fill="none" opacity="0.6"/>
+                        
+                        <!-- Shoulders -->
+                        <path d="M 60 140 L 50 180 Q 100 200 150 180 L 140 140" fill="#0f1419" stroke="#00ff88" stroke-width="2"/>
+                        
+                        <!-- Chest Tech Lines -->
+                        <line x1="85" y1="150" x2="115" y2="150" stroke="#00ff88" stroke-width="1" opacity="0.3"/>
+                        <line x1="80" y1="165" x2="120" y2="165" stroke="#00ff88" stroke-width="1" opacity="0.3"/>
+                        
+                        <!-- Glow Effect -->
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </svg>
+
+                    <!-- Breathing Animation Ring -->
+                    <div class="breathing-ring"></div>
+
+                    <!-- Neon Glow Container -->
+                    <div class="neon-glow"></div>
+                </div>
+
+                <!-- Hacker Title -->
+                <div class="hacker-title">
+                    <h1>NEURAL INTERFACE ACTIVE</h1>
+                    <p class="status-line">Status: <span class="status-active">OPERATIONAL</span></p>
+                </div>
+
+                <!-- Tech Specs -->
+                <div class="tech-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">PROCESSING POWER:</span>
+                        <span class="spec-value">999 TF/s</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">NEURAL SYNC:</span>
+                        <span class="spec-value">99.9%</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">THREAT LEVEL:</span>
+                        <span class="spec-value">MAXIMUM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Terminal Output -->
+        <div class="terminal-output">
+            <div class="terminal-header">
+                <span class="terminal-title">> SYSTEM LOG</span>
+                <span class="terminal-time" id="terminalTime">00:00:00</span>
+            </div>
+            <div class="terminal-content" id="terminalContent">
+                <div class="terminal-line">> Initializing CyberCore neural network...</div>
+                <div class="terminal-line">> Loading AI protocols...</div>
+                <div class="terminal-line">> <span class="highlight">✓ All systems operational</span></div>
+                <div class="terminal-line">> <span class="highlight">✓ Quantum encryption enabled</span></div>
+                <div class="terminal-line">> <span class="highlight">✓ Neural sync achieved</span></div>
+                <div class="terminal-line">></div>
+            </div>
+        </div>
+
+        <!-- Scanning Lines Animation -->
+        <div class="scan-lines"></div>
+
+        <!-- Vignette Effect -->
+        <div class="vignette"></div>
+    </div>
+
+    <!-- Audio Context for Visual Feedback (optional) -->
+    <audio id="ambientAudio" loop style="display: none;">
+        <!-- Optional: Add ambient sound source -->
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
